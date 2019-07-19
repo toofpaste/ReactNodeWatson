@@ -1,6 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+const personality = require( './watson-helpers/personality');
+
+personality('@realDonaldTrump')
+    .then(function(personalityProfile) {
+      console.log(personalityProfile.traits)
+      console.log(personalityProfile.needs)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
 
 function App() {
   return (
